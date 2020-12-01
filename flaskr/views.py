@@ -20,12 +20,12 @@ def index():
 @bp.route('/create', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
-        PName = request.form['Pname']
+        Pname = request.form['Pname']
         Age = request.form['Age']
         Gender = request.form['Gender']
         error = None
 
-        if not Name:
+        if not Pname:
             error = 'Name is required.'
 
         if error is not None:
@@ -34,7 +34,7 @@ def create():
             db = get_db()
             db.execute(
                 'INSERT INTO patient (Pname,Age,Gender)'
-                ' VALUES (?, ?, ?, ?, ?)',
+                ' VALUES (?, ?, ?)',
                 (Pname,Age,Gender)    
             )
             db.commit()

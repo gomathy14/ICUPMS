@@ -14,6 +14,30 @@ def index():
     posts = db.execute(
         'SELECT p.id, Pname,Age,Gender,DateofAdm'
         ' FROM patient p'
-         
     ).fetchall()
     return render_template('index.html', posts=posts)
+
+@bp.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        PName = request.form['Pname']
+        Age = request.form['Age']
+        Gender = request.form['Gender']
+        error = None
+
+        if not Name:
+            error = 'Name is required.'
+
+        if error is not None:
+            flash(error)
+        else:
+            db = get_db()
+            db.execute(
+                'INSERT INTO patient (Pname,Age,Gender)'
+                ' VALUES (?, ?, ?, ?, ?)',
+                (Pname,Age,Gender)    
+            )
+            db.commit()
+            return redirect(url_for('views.index'))
+
+    return render_template('create.html')    

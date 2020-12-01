@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1 class="h3 mb-2 text-gray-800">Patient Details</h1>
+<p class="mb-4">New Patient registration</p>
+
+  
+
+
+<body>
+  <div class="container">
+ <form method="post">
+  <label for="Pname">&emsp;<b>Name : </b> &emsp;&ensp; &emsp; &emsp;&nbsp;</label>
+    <input name="Pname" id="Pname" style="width: 150px;" placeholder="Enter the name" value="{{ request.form['Pname'] }}" required>
+    <br>
+    <label for="Age">&emsp;<b>Age :</b> &ensp;&emsp; &emsp; &emsp;&nbsp;</label>
+    <input name="Age" id="Age" style="width: 150px;" placeholder="Enter the age" value="{{ request.form['Age'] }}"  required>
+    <br>
+    <label for="Gender">&emsp;<b>Gender :</b>&nbsp;&emsp; &emsp; &ensp;&ensp;</label>
+    <input name="Gender" id="Gender" style="width: 150px;" placeholder="Enter the gender" value="{{ request.form['Gender'] }}" required>
+    <br>
+    
+    
+    
+    
+    <button class ="btn btn-primary">Save</button>
+    <input action="action" class="btn btn-primary" onclick="window.history.go(-1); 
+      return false;" type="submit" value="Cancel"/>
+
+  </form>
+
+
+
+	</body>
+{% endblock %}  

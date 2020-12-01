@@ -21,20 +21,25 @@
             <th>Age</th>
             <th>Gender</th>
             <th>Date of Admission</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody align="center">
           {% for e in posts %}
           <tr>
             
-              <td> {{ e.id }} </td>
+              <td> {{ e.pid }} </td>
               <td>{{ e.Pname }} </td> 
               <td>{{ e.Age }}</td>
               <td>{{ e.Gender }}</td>
               <td>{{ e.DateofAdm }}</td>
 
+
              
-              
+             <td>
+              <a href="{{ url_for('views.details', pid=e.pid ) }}" class="btn btn-primary" role="button" >
+              View Details </a>
+            </td> 
 
             </tr>
             {% endfor %}

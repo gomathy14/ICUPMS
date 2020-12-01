@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Header -->
+
+<h1 class="mt-4">Dashboard</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Patient Details</li>
+</ol>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Bed No</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ posts[1] }} </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-hospital-o fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Diagnosis</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ Diagnosis[1] }} </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-heartbeat fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Doctor Name</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">Dr {{ docname[1] }} </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-stethoscope fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Surgery</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ surgery[1] }} </div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-medkit fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+
+
+
+{% endblock %}
+
+<!--{% block cusjs %}
+<script type="text/javascript">
+  // Set new default font family and font color to mimic Bootstrap's default styling
+  Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+  Chart.defaults.global.defaultFontColor = '#292b2c';
+
+  // Pie Chart Example
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ["Income", "Expenses"],
+      datasets: [{
+        data: {{ list }},
+        backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+      }],
+    },
+  });
+</script>
+
+{% endblock %}-->

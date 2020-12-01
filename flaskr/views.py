@@ -38,6 +38,7 @@ def create():
                 (Pname,Age,Gender)    
             )
             db.commit()
+	
             return redirect(url_for('views.index'))
 
     return render_template('create.html')    

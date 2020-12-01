@@ -44,7 +44,9 @@ def create():
                 (Pname,Age,Gender,BedNo,diagnosis,docname,surgery)    
             )
             db.commit()
+	
             return redirect(url_for('views.index'))
+
 
     return render_template('create.html')
 
@@ -72,3 +74,5 @@ def details(pid):
     	' WHERE q.pid={}'.format(pid)
     	).fetchone()
 	return render_template('details.html', posts=posts,Diagnosis=Diagnosis,docname=docname,surgery=surgery)
+  
+

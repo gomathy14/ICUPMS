@@ -11,11 +11,11 @@ bp = Blueprint('views', __name__)
 @bp.route('/')
 def index():
 	db = get_db()
-    posts = db.execute(
-        'SELECT p.id, Pname,Age,Gender,DateofAdm'
-        ' FROM patient p'
-    ).fetchall()
-    return render_template('index.html', posts=posts)
+	posts = db.execute(
+		'SELECT p.id, Pname,Age,Gender,DateofAdm'
+		' FROM patient p'
+		).fetchall()
+	return render_template('index.html', posts=posts)
 
 @bp.route('/create', methods=('GET', 'POST'))
 def create():
